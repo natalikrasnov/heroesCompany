@@ -1,0 +1,32 @@
+<form class="auth-form" (ngSubmit)="onSubmit()" [formGroup]="form">
+    <h1>{{title}}</h1>
+    <div class="form-template-group">
+        <div class="form-template" *ngFor="let elementInput of userInputs.controls; let indexName=index"
+            formGroupName="userInputs" [ngSwitch]="getElementInputTypeByIndex(indexName)">
+            <label [for]="indexName">{{elementInputsNamesLabels(indexName)}} : </label>
+            <span *ngSwitchCase="'input'">
+                <input [id]="indexName" [type]="getElementInputDataByIndex(indexName).type"
+                    [formControlName]="indexName" />
+            </span>
+            <span *ngSwitchCase="'select'">
+                <select [id]="indexName" [formControlName]="indexName">
+                    <option *ngFor="let optionValue of getElementInputDataByIndex(indexName).options">
+                        {{optionValue}}
+                    </option>
+                </select>
+            </span>
+        </div>
+    </div>
+    <div class="form-template-group base">
+        <div class="form-template">
+            <label for="username">username:</label>
+            <input id="username" type="text" formControlName="username" />
+        </div>
+        <div class="form-template">
+            <label for="password">password:</label>
+            <input id="password" type="password" formControlName="password" (input)="onInput()" />
+        </div>
+        <div *ngIf="errorMessage" class="error-message">{{errorMessage}}</div>
+    </div>
+    <button type="submit" [disabled]="!form.valid">submit</button>
+</form>

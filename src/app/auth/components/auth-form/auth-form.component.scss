@@ -1,0 +1,36 @@
+.auth-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+    gap: 1.5rem;
+
+    input{
+        border: none;
+        outline: none;
+        border-bottom: 1px solid black;
+    }
+
+    .form-template-group{
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        gap: 1rem;
+
+        .form-template{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .base{
+        padding: 1rem;
+        border: 2px solid rgba(255, 0, 0, 0.5);
+    }
+    .error-message{
+        color: red;
+        font-size: 0.8rem;
+    }
+}

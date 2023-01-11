@@ -1,0 +1,14 @@
+.form{
+    
+
+    .form-template-group{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    input{
+        padding: 0.2rem;
+        width: 100%;
+    }
+}

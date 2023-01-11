@@ -1,0 +1,10 @@
+<div class="backdrop" (click)="onButtonClose($event, true)">
+    <div class="content" (click)="onButtonClose($event, false)">
+        <app-card [h1]="hero.name" h4="Details:" [info]="info" direction="column" [color]="hero.suiteColor">
+        </app-card>
+        <div class="form">
+            <app-form title="Edit Hero:" [elementInputs]="form" [elementInputsNames]="formEntitiesNames"
+                (onSubmitEvent)="onSubmit($event)"></app-form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,5 @@
+<app-card [color]="hero.suiteColor" [h1]="hero.name" [h2]="'Hero ID: '+hero.id" (click)="goToEdit()">
+</app-card>
+
+<app-edit-hero *ngIf="isEditOpen" [hero]="hero" (onClose)="closeEditModal()">
+</app-edit-hero>

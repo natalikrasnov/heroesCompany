@@ -1,0 +1,11 @@
+<h1>Hello Trainer</h1>
+
+<nav mat-tab-nav-bar [tabPanel]="tabPanel">
+    <a mat-tab-link *ngFor="let pageTitle of titles" [routerLink]="getRouterLink(pageTitle)" routerLinkActive
+        #rla="routerLinkActive" [active]="rla.isActive">
+        {{ pageTitle}}
+    </a>
+</nav>
+<mat-tab-nav-panel #tabPanel>
+    <router-outlet></router-outlet>
+</mat-tab-nav-panel>
